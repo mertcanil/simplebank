@@ -1,3 +1,6 @@
+dep:
+	go mod tidy
+
 init:
 	migrate create -ext sql -dir db/migration -seq init_schema
 
@@ -10,4 +13,7 @@ migratedown:
 sqlc:
 	sqlc generate
 
-.PHONY: init migrateup migratedown sqlc
+test:
+	go test -v --cover ./...
+
+.PHONY: dep init migrateup migratedown sqlc

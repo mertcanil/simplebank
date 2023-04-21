@@ -1,5 +1,5 @@
 CREATE TABLE accounts (
-    id int NOT NULL,
+    id serial NOT NULL,
     owner varchar NOT NULL,
     balance float NOT NULL,
     currency varchar NOT NULL,
@@ -8,7 +8,7 @@ CREATE TABLE accounts (
 );
 
 CREATE TABLE entries (
-    id int NOT NULL,
+    id serial NOT NULL,
     account_id int NOT NULL,
     amount float NOT NULL,
     created_at timestamp NOT NULL DEFAULT (now()),
@@ -17,7 +17,7 @@ CREATE TABLE entries (
 );
 
 CREATE TABLE transfers (
-    id int NOT NULL,
+    id serial NOT NULL,
     from_account_id int NOT NULL,
     to_account_id int NOT NULL,
     amount float NOT NULL,
