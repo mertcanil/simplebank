@@ -16,8 +16,8 @@ RETURNING id, account_id, amount, created_at
 `
 
 type CreateEntryParams struct {
-	AccountID int32   `json:"account_id"`
-	Amount    float64 `json:"amount"`
+	AccountID int32 `json:"account_id"`
+	Amount    int64 `json:"amount"`
 }
 
 func (q *Queries) CreateEntry(ctx context.Context, arg CreateEntryParams) (Entry, error) {
@@ -108,8 +108,8 @@ RETURNING id, account_id, amount, created_at
 `
 
 type UpdateEntryParams struct {
-	ID     int32   `json:"id"`
-	Amount float64 `json:"amount"`
+	ID     int32 `json:"id"`
+	Amount int64 `json:"amount"`
 }
 
 func (q *Queries) UpdateEntry(ctx context.Context, arg UpdateEntryParams) (Entry, error) {
