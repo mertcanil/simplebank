@@ -1,4 +1,4 @@
-# simplebank
+# Simple Bank
 
 #### Requirements
 - golang-migrate
