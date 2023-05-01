@@ -16,4 +16,7 @@ sqlc:
 test:
 	go test -v --cover ./...
 
-.PHONY: dep init migrateup migratedown sqlc
+server:
+	go run main.go
+
+.PHONY: dep init migrateup migratedown sqlc test server
